@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>research.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script>
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $(".navbar-fixed-top");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+  });
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles_research.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Louise Caron</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="research.html">Publications</a>
+</li>
+<li>
+  <a href="CV.html">Resume</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="Contact.html">Contact</a>
+</li>
+<li>
+  <a href="louise.caron@ined.fr">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/caronlouise_">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="(https://scholar.google.com/citations?user=SKq8bEAAAAAJ&amp;hl=fr)">
+    <span class="fa fa-google fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><div style="margin-bottom:50px;">
+
+</div>
+<div align="center">
+<font face="Arial">Publications
+<div>
+</font></h1>
+
+</div>
+
+
+<p><br></p>
+<hr />
+<div id="articles-in-peer-reviewed-journals" class="section level1">
+<h1>Articles in Peer-Reviewed Journals</h1>
+<div style="margin-bottom:30px;">
+
+</div>
+Caron, L. and Ichou, M. (2020). <a href="https://journals.sagepub.com/doi/10.1177/0197918320904925">“High Selection, Low Success: The Heterogeneous Effect of Migrants’ Access to Employment on Their Remigration”</a>, <strong><em>International Migration Review</em></strong>, First Published Online March 6. <font size="2">
+<details close>
+<summary> Abstract </summary>
+<div style="margin-bottom:5px;">
+
+</div>
+This article reconciles contrasting findings on the effect of access to employment on remigration by showing that this effect is actually heterogeneous and depends on migrants’ initial educational selection from the origin country. Combining longitudinal data from England and Wales (1971–2011) with data on educational attainment distributions in migrants’ origin countries, we find that the impact of being out of a job (unemployed or inactive) on the probability to remigrate is larger among migrants who were initially more positively selected in terms of educational attainment. This interaction effect appears stronger for male and recent migrants. Thus, in addition to migrants’ access to employment in the host country, the mismatch between migrants’ initial selection — that partly captures their premigration expectations — and their employment status at destination helps explain remigration behaviors.
+</details>
+<p></font></p>
+<div style="margin-bottom:25px;">
+
+</div>
+<font size="3"> Caron, L. (2020). <a href="https://journals.sagepub.com/doi/abs/10.1177/0197918319885646">“An Intergenerational Perspective on (Re)migration: Return and Onward Mobility Intentions across Immigrant Generations”</a>, <strong><em>International Migration Review</em></strong>, 54(3), 820-852. </font> <font size="2">
+<details close>
+<summary>Abstract</summary>
+<div style="margin-bottom:5px;">
+
+</div>
+This article compares the prevalence and determinants of international mobility intentions across immigrant generations (G1, G1.5, G2, and G2.5), using French survey data. Two types of migration intentions are analyzed: (a) return to the (parents’) origin country and (b) onward migration to a third country. Results highlight migration intentions’ intergenerational variation and underlying logics. The probability to state return intentions is larger for G1 yet surprisingly similar to the stated return intentions for G2. By contrast, G2.5 (one immigrant and one French native parent) stand out as they are primarily characterized by onward migration intentions and are significantly less likely to consider “returning” to their sole immigrant parents’ origin country. Echoing the conceptual framework of “reactive transnationalism” or “reactive ethnicity,” the specific determinant of G2 return intentions appears to be their perception of discrimination. These findings show the value of (a) disaggregating the traditional first versus second generation dichotomy to understand the complexity of migration intentions and (b) including countries other than the parental homeland when studying second-generation transnational practices. More broadly, the article contributes to a better understanding of integration mechanisms by using migration intentions not only as proxies for population movements but also as a valuable framework providing empirical insights into immigrants’ personal relationship to both the country of residence and expected destination.
+</details>
+<p></font></p>
+<div style="margin-bottom:25px;">
+
+</div>
+<font size="3"> Caron, L. (2018). <a href="https://www.cairn.info/article.php?ID_ARTICLE=POPU_1803_0503">“De qui mesure-t-on l’intégration ? Remigration des immigrés et insertion professionnelle en France”</a>, <strong><em>Population</em></strong>, 73(3), 503-542. </font> <font size="2">
+<details close>
+<summary>Abstract</summary>
+<div style="margin-bottom:5px;">
+
+</div>
+La plupart des études quantitatives sur l’immigration en France font l’hypothèse implicite que les immigrés s’installent de façon permanente dans le pays de destination. Pourtant, beaucoup d’entre eux repartent, soit pour rentrer dans leur pays d’origine, soit pour se rendre dans un pays tiers. Cet article analyse ces mécanismes de remigration ainsi que leurs conséquences empiriques et méthodologiques pour l’étude du devenir des immigrés en France. Le large panel administratif de l’<em>Échantillon démographique permanent</em> donne l’opportunité d’examiner les sorties du territoire entre 1975 et 1999. Ces analyses montrent que les immigrés qui repartent sont caractérisés par des situations familiales et professionnelles spécifiques, ce qui pourrait affecter la validité des études sur l’intégration. En comparant l’évolution de l’accès à l’emploi des immigrés à partir d’estimations transversales et de panel, on montre néanmoins que les mesures standards de l’insertion professionnelle de ces derniers par rapport aux natifs sont peu biaisées par un phénomène de remigration sélective. Cette démarche méthodologique invite à interroger le postulat classique de la migration permanente quand on analyse quantitativement les processus d’intégration.
+</details>
+</font>
+<div style="margin-bottom:3px;">
+
+</div>
+<ul class="liste_retrait">
+<font size="3"><em>English version</em> - Caron, L. (2018). <a href="https://www.cairn-int.info/article-E_POPU_1803_0503--whose-integration-do-we-measure.htm#xd_co_f=NDczZjMxZDktZjMwNS00OTZjLWJlNGYtMGYwYjU2MzkzZjUw~">“Whose Integration Do We Measure? Immigrants’ Remigration and Labour Market Integration in France”</a>, <strong><em>Population</em></strong>, 73(3), 481-518. </font> <font size="2">
+<details close>
+<summary>Abstract</summary>
+<div style="margin-bottom:5px;">
+
+</div>
+Most quantitative studies on immigrants’ integration in France are based on the implicit assumption that all immigrants would settle permanently in the country of destination. However, many immigrants eventually remigrate, either returning to their country of origin or pursuing an onward migration to a third country. This article explores the mechanisms of remigration and their empirical and methodological consequences for the analysis of immigrants’ trajectories in France. Taking advantage of large administrative longitudinal data from the <em>Permanent Demographic Sample (EDP)</em>, this article examines departures from France between 1975 and 1999. The results show that immigrants who remigrate over the period are characterized by specific family and work situations, which might affect the validity of studies on integration. However, by comparing measures of immigrants’ economic integration drawn from cross-sectional and panel estimations, this study finds no evidence of a bias due to selective remigration for standard measures of immigrants’ trajectories in the French labour market. This approach calls for further questioning the classical conceptual framework of permanent migration in quantitative analyses of integration processes.
+</details>
+</ul>
+<p></font></p>
+<p><br><br></p>
+<hr />
+<div style="margin-bottom:8px;">
+
+</div>
+</div>
+<div id="book-chapters" class="section level1">
+<h1>Book Chapters</h1>
+<div style="margin-bottom:30px;">
+
+</div>
+<p><font size="3"> Caron, L. (2016). “Immigration permanente ou migration temporaire ? L’invisibilité des départs de France”<em>in</em> Beauchemin, C. and Ichou, M. (dir.), <em>Au-delà de la « crise des migrants » : décentrer le regard</em>, <strong><em>Karthala</em></strong>, Disputatio, p. 73-93.</p>
+<div style="margin-bottom:15px;">
+
+</div>
+<p>Caron, L. (2016). “Les pays européens sont-ils exclusivement des pays d’immigration ?” <em>in</em> Thiollet, H. (coord.), <em>Migrants, migrations. 50 questions pour vous faire votre opinion</em>, <strong><em>Armand Colin</em></strong>, p. 36-39. <br><br><br></p>
+<hr />
+</div>
+<div id="phd-dissertation" class="section level1">
+<h1>PhD Dissertation</h1>
+<div style="margin-bottom:30px;">
+
+</div>
+Caron Louise, 2019, <em><strong>De l’immigration permanente aux migrations circulaires. L’expérience de la (re)migration dans les trajectoires individuelles en France.</strong></em>, Ph.D. Thesis in Sociology, Paris, Sciences Po, 436 p.
+<div style="margin-bottom:5px;">
+
+</div>
+<ul class="short_retrait">
+<em>Thesis committee:</em> Didier Breton (Uni. of Strasbourg), Mathieu Ichou (Ined), Dominique Meurs (Uni. of Nanterre), Ettore Recchi (Sciences Po), Mirna Safi (<em>supervisor</em>, Sciences Po), Thomas Soehl (McGill University).
+<div style="margin-bottom:5px;">
+
+</div>
+<em>Honorable Mention</em> from the 2020 IMISCOE Maria Baganha Award Committee.
+</ul>
+<ul>
+<li><a href="Dissertation_Summary.pdf">Thesis Summary (in English)</a></li>
+</ul>
+<div style="margin-bottom:30px;">
+
+</div>
+<strong>Short Abstract (EN):</strong>
+<div style="margin-bottom:5px;">
+
+</div>
+<div align="center">
+<p><em>"From Permanent Migration to Circular Migrations.</em><br/> <em>The Experience of (Re)migration in Individuals’ Trajectories in France."</em></p>
+</div>
+<div style="margin-bottom:1px;">
+
+</div>
+<p style="text-align:justify;">
+This doctoral dissertation studies the role of migration trajectories from and to metropolitan France in individuals’ trajectories. Breaking with the conventional depiction of migration as a one-way and one-time movement, this thesis aims first of all at improving our knowledge of immigrants’ remigration in France. Considering France both as a place of arrival and departure, this research more broadly seeks to renew the analytical approach of migration, by drawing systematic comparisons between several types of migrants rarely studied together: immigrants, internal migrants from overseas French departments, French nationals born abroad, second generations, and natives.<br/> I combine large datasets drawn from censuses and tax returns (the <em>Permanent Demographic Sample</em>, 1975-1999, 2011-2016) and the <em>Trajectories and Origins</em> survey (2008). Thus, this research is based on an original empirical framework that makes it possible to explore the role of migration experiences in individuals’ trajectories at various points in the migration process. The comparison between different populations reveals the diversity of migration patterns from France, and of their determinants. The combined analysis of these selection processes and of the effects of an international experience on professional careers upon return in France provides new insights into the role of migration in the (re)production of social inequalities. Finally, this thesis shows the need to consider past migration and potential future remigration of immigrants to understand the mechanisms of socioeconomic integration in the host society.
+</p>
+<div style="margin-bottom:30px;">
+
+</div>
+<strong>Résumé (FR):</strong>
+<div style="margin-bottom:5px;">
+
+</div>
+<div align="center">
+<p><em>"De l’immigration permanente aux migrations circulaires.</em><br/> <em>L’expérience de la (re)migration dans les trajectoires individuelles en France."</em></p>
+</div>
+<div style="margin-bottom:1px;">
+
+</div>
+<p style="text-align:justify;">
+Cette thèse étudie le rôle des trajectoires migratoires depuis et vers la France métropolitaine dans les parcours individuels. Dépassant la conception traditionnelle de la migration comme un mouvement unidirectionnel et linéaire, l’objectif de cette thèse est d’abord d’améliorer la connaissance du phénomène de remigration des immigrés en France. En considérant la France à la fois comme espace d’arrivée et de départ, elle vise plus largement à renouveler l’approche des migrations en comparant différents types de migrants rarement étudiés conjointement : immigrés, natifs des DOM, Français nés à l’étranger, deuxièmes générations, et natifs de la population majoritaire.<br/> En combinant les données fiscales et du recensement de l’<em>Échantillon Démographique Permanent</em> (1975-1999, 2011-2016), et de l’enquête <em>Trajectoires et Origines</em> (2008), cette recherche s’appuie sur un dispositif empirique original qui permet d’explorer la place des expériences migratoires dans les parcours individuels à divers moments du processus migratoire. La comparaison entre différentes catégories de population met au jour la diversité des trajectoires migratoires au départ de la France métropolitaine, réelles ou envisagées, et de leurs déterminants. L’analyse combinée de ces processus de sélection et des effets d’un séjour à l’étranger sur les carrières professionnelles au retour en France apporte des éléments nouveaux sur le rôle des migrations dans la (re)production des inégalités sociales. Enfin, cette thèse montre comment considérer les mobilités passées et les possibles remigrations futures des immigrés affine notre compréhension des mécanismes d’intégration socioéconomique dans la société d’accueil.
+</p>
+<p><br><br><br></p>
+<hr />
+<div style="margin-bottom:8px;">
+
+</div>
+</div>
+<div id="book-reviews" class="section level1">
+<h1>Book Reviews</h1>
+<div style="margin-bottom:30px;">
+
+</div>
+<p><font size="3"> Caron, L. (2017). “Wihtol De Wenden, Catherine, <em>Atlas des migrations : Un équilibre mondial à inventer</em>, 2016, Autrement, Atlas-monde, 2016, 96p.”, <strong><em>Population</em></strong>, 72(2), 366-367.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
