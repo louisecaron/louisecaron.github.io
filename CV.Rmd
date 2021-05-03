@@ -1,0 +1,59 @@
+---
+title: <div style="margin-bottom:50px;"> </div><div align="center"><font face="Helvetica">Resume<div></font>
+pagetitle: Louise Caron - CV
+output:
+  html_document:
+    includes:
+      in_header: header.html
+---
+
+
+<br><br>
+
+You can download my detailed CV [here](CaronLouise_CV_EN_April2021.pdf) (et [ici](CaronLouise_CV_FR_Avril2021.pdf) pour la version française).
+
+
+<div style="margin-bottom:70px;">
+</div>
+
+***
+
+<font face="Trebuchet MS" size="5">Academic positions</font>
+
+<div style="margin-bottom:25px;">
+</div>
+
+Since Oct. 2020 -- **Tenured Researcher** (_**Chargée de recherche**_) at [Ined](https://www.ined.fr/en/) (French National Institute for Demographic Studies).
+
+<div style="margin-bottom:15px;">
+</div>
+
+2019-2020 -- **Postdoctoral Researcher** at [DEMO](https://uclouvain.be/en/research-institutes/iacchos/demo) (Université Catholique de Louvain), working with Bruno Schoumaker on the [LIMA Project](https://www.limauclouvain.eu/en/) (_Legal framework’s Impact on Migrant’s Agency_).
+
+<div style="margin-bottom:15px;">
+</div>
+
+2018-2019 -- **Research Assistant** at [Ined](https://www.ined.fr/en/). Working with Michel Guillot, Myriam Khlat & Lidia Panico on the National Institutes of Health-funded project [_Mobility, Selectivity and the Migrant Mortality Advantage_](https://web.sas.upenn.edu/mosemma/).
+
+<div style="margin-bottom:70px;">
+</div>
+
+
+***
+
+<font face="Trebuchet MS" size="5">Education</font>
+
+<div style="margin-bottom:25px;">
+</div>
+
+**2019** -- PhD in Sociology, Sciences Po Paris ([OSC](https://www.sciencespo.fr/osc/en) and [LIEPP](https://www.sciencespo.fr/liepp/en.html)) and [Ined](https://www.ined.fr/en/)."From Permanent to Circular Migrations. The Experience of (Re)Migration in Individual Trajectories in France". _Supervisor:_ [Mirna Safi](https://www.sciencespo.fr/osc/en/node/1156.html) (OSC Sciences Po).
+
+<div style="margin-bottom:15px;">
+</div>
+
+**2015** -- MSc. in Sociology, [Sciences Po Paris](https://www.sciencespo.fr/departement-sociologie/en).
+
+<div style="margin-bottom:15px;">
+</div>
+
+**2013** -- [ENSAE Paristech](https://www.ensae.fr/) (_Ecole Nationale de la Statistique et de l'Administration Economique_). MSc. in Economics, Statistics and Quantitative Methods.
