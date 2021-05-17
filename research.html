@@ -13,19 +13,26 @@
 
 <title>Louise Caron - Publications</title>
 
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script>
@@ -36,6 +43,8 @@
     });
   });
 </script>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -49,32 +58,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles_research.css" type="text/css" />
 
@@ -85,10 +69,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -105,40 +85,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 54px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 59px;
-  margin-top: -59px;
-}
-.section h2 {
-  padding-top: 59px;
-  margin-top: -59px;
-}
-.section h3 {
-  padding-top: 59px;
-  margin-top: -59px;
-}
-.section h4 {
-  padding-top: 59px;
-  margin-top: -59px;
-}
-.section h5 {
-  padding-top: 59px;
-  margin-top: -59px;
-}
-.section h6 {
-  padding-top: 59px;
-  margin-top: -59px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -166,7 +119,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -178,7 +131,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -189,10 +142,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -204,7 +170,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -330,13 +295,13 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
 
@@ -369,19 +334,19 @@ div.tocify {
 </li>
 <li>
   <a href="mailto:louise.caron@ined.fr">
-    <span class="fa fa-envelope fa-lg"></span>
+    <span class="fas fa-envelope fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://twitter.com/caronlouise_">
-    <span class="fa fa-twitter fa-lg"></span>
+    <span class="fas fa-twitter fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://scholar.google.com/citations?user=SKq8bEAAAAAJ&amp;hl=fr">
-    <span class="fa fa-google fa-lg"></span>
+    <span class="fas fa-google fa-lg"></span>
      
   </a>
 </li>
@@ -390,7 +355,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -412,21 +377,28 @@ div.tocify {
 <div style="margin-bottom:30px;">
 
 </div>
-Caron, L. and Ichou, M. (2020). <a href="https://journals.sagepub.com/doi/10.1177/0197918320904925">“High Selection, Low Success: The Heterogeneous Effect of Migrants’ Access to Employment on Their Remigration”</a>, <strong><em>International Migration Review</em></strong>, First Published Online March 6. <font size="2">
+Caron, L. &amp; Ichou, M. (2020). <a href="https://journals.sagepub.com/doi/10.1177/0197918320904925">“High Selection, Low Success: The Heterogeneous Effect of Migrants’ Access to Employment on Their Remigration”</a>, <strong><em>International Migration Review</em></strong>, First Published Online March 6. <font size="2">
 <details close>
-<summary> Abstract </summary>
+<summary>
+Abstract
+</summary>
 <div style="margin-bottom:5px;">
 
 </div>
 This article reconciles contrasting findings on the effect of access to employment on remigration by showing that this effect is actually heterogeneous and depends on migrants’ initial educational selection from the origin country. Combining longitudinal data from England and Wales (1971–2011) with data on educational attainment distributions in migrants’ origin countries, we find that the impact of being out of a job (unemployed or inactive) on the probability to remigrate is larger among migrants who were initially more positively selected in terms of educational attainment. This interaction effect appears stronger for male and recent migrants. Thus, in addition to migrants’ access to employment in the host country, the mismatch between migrants’ initial selection — that partly captures their premigration expectations — and their employment status at destination helps explain remigration behaviors.
 </details>
-<p></font></p>
+</font>
+<ul class="short_retrait">
+<font size="2">Media coverage: <a href="https://population-europe.eu/research/popdigests/how-does-unemployment-affect-migrants-likelihood-leave-england-and-wales">PopDigest</a></font>
+</ul>
 <div style="margin-bottom:25px;">
 
 </div>
 <font size="3"> Caron, L. (2020). <a href="https://journals.sagepub.com/doi/abs/10.1177/0197918319885646">“An Intergenerational Perspective on (Re)migration: Return and Onward Mobility Intentions across Immigrant Generations”</a>, <strong><em>International Migration Review</em></strong>, 54(3), 820-852. </font> <font size="2">
 <details close>
-<summary>Abstract</summary>
+<summary>
+Abstract
+</summary>
 <div style="margin-bottom:5px;">
 
 </div>
@@ -438,7 +410,9 @@ This article compares the prevalence and determinants of international mobility 
 </div>
 <font size="3"> Caron, L. (2018). <a href="https://www.cairn.info/article.php?ID_ARTICLE=POPU_1803_0503">“De qui mesure-t-on l’intégration ? Remigration des immigrés et insertion professionnelle en France”</a>, <strong><em>Population</em></strong>, 73(3), 503-542. </font> <font size="2">
 <details close>
-<summary>Abstract</summary>
+<summary>
+Abstract
+</summary>
 <div style="margin-bottom:5px;">
 
 </div>
@@ -451,7 +425,9 @@ La plupart des études quantitatives sur l’immigration en France font l’hypo
 <ul class="liste_retrait">
 <font size="3"><em>English version</em> - Caron, L. (2018). <a href="https://www.cairn-int.info/article-E_POPU_1803_0503--whose-integration-do-we-measure.htm#xd_co_f=NDczZjMxZDktZjMwNS00OTZjLWJlNGYtMGYwYjU2MzkzZjUw~">“Whose Integration Do We Measure? Immigrants’ Remigration and Labour Market Integration in France”</a>, <strong><em>Population</em></strong>, 73(3), 481-518. </font> <font size="2">
 <details close>
-<summary>Abstract</summary>
+<summary>
+Abstract
+</summary>
 <div style="margin-bottom:5px;">
 
 </div>
@@ -470,7 +446,15 @@ Most quantitative studies on immigrants’ integration in France are based on th
 <div style="margin-bottom:30px;">
 
 </div>
-<p><font size="3"> Caron, L. (2016). “Immigration permanente ou migration temporaire ? L’invisibilité des départs de France”<em>in</em> Beauchemin, C. and Ichou, M. (dir.), <em>Au-delà de la « crise des migrants » : décentrer le regard</em>, <strong><em>Karthala</em></strong>, Disputatio, p. 73-93.</p>
+<p><font size="3"> Schoumaker, B., Le Guen, M., Caron, L. &amp; Nie, W., (In press), “Typologies des trajectoires administratives des immigrés congolais, indiens et américains en Belgique : une exploitation des données de registre”, <em>in</em> Sarolea S., Merla L. &amp; Schoumaker B. (dir.), <em>Agentivité et trajectoires migratoires</em>, <strong><em>L’Harmattan</em></strong>, Paris.</p>
+<div style="margin-bottom:15px;">
+
+</div>
+<p>Le Guen, M., Caron, L., Schoumaker, B. &amp; Nie, W., (In press), “Occurrences et récurrences des situations d’irrégularité au sein des trajectoires individuelles des Amércains, Congolais et Indiens en Belgique”, <em>in</em> Sarolea S., Merla L. &amp; Schoumaker B. (dir.), <em>Agentivité et trajectoires migratoires</em>, <strong><em>L’Harmattan</em></strong>, Paris.</p>
+<div style="margin-bottom:15px;">
+
+</div>
+<p>Caron, L. (2016). “Immigration permanente ou migration temporaire ? L’invisibilité des départs de France”<em>in</em> Beauchemin, C. and Ichou, M. (dir.), <em>Au-delà de la « crise des migrants » : décentrer le regard</em>, <strong><em>Karthala</em></strong>, Disputatio, p. 73-93.</p>
 <div style="margin-bottom:15px;">
 
 </div>
@@ -482,64 +466,67 @@ Most quantitative studies on immigrants’ integration in France are based on th
 <div style="margin-bottom:30px;">
 
 </div>
-Caron Louise, 2019, De l’immigration permanente aux migrations circulaires. L’expérience de la (re)migration dans les trajectoires individuelles en France., Ph.D. Thesis in Sociology, Paris, Sciences Po, 436 p.
+Caron, L., 2019, <em>De l’immigration permanente aux migrations circulaires. L’expérience de la (re)migration dans les trajectoires individuelles en France.</em>, Ph.D. Thesis in Sociology, Paris, Sciences Po, 436 p.
 <div style="margin-bottom:5px;">
 
 </div>
 <ul class="short_retrait">
-<em>Thesis committee:</em> Didier Breton (Uni. of Strasbourg), Mathieu Ichou (Ined), Dominique Meurs (Uni. of Nanterre), Ettore Recchi (Sciences Po), Mirna Safi (<em>supervisor</em>, Sciences Po), Thomas Soehl (McGill University).
+<em><strong>Honorable Mention</strong></em> from the <strong>2020 IMISCOE</strong> Maria Baganha Award Committee.
 <div style="margin-bottom:5px;">
 
 </div>
-<em>Honorable Mention</em> from the 2020 IMISCOE Maria Baganha Award Committee.
+<em>Thesis committee:</em> Didier Breton (Uni. of Strasbourg), Mathieu Ichou (Ined), Dominique Meurs (Uni. of Nanterre), Ettore Recchi (Sciences Po), Mirna Safi (<em>supervisor</em>, Sciences Po), Thomas Soehl (McGill University).
 </ul>
 <ul>
 <li><a href="Dissertation_Summary.pdf">Thesis Summary (in English)</a></li>
 </ul>
-<div style="margin-bottom:30px;">
+<div style="margin-bottom:10px;">
 
 </div>
-<strong>Short Abstract (EN):</strong>
-<div style="margin-bottom:5px;">
-
-</div>
+<font size="2">
+<details close>
+<summary>
+Short Abstract (English)
+</summary>
 <div align="center">
 <p><em>"From Permanent Migration to Circular Migrations.</em><br/> <em>The Experience of (Re)migration in Individuals’ Trajectories in France."</em></p>
 </div>
-<div style="margin-bottom:1px;">
+<div style="margin-bottom:5px;">
 
 </div>
 <p style="text-align:justify;">
 This doctoral dissertation studies the role of migration trajectories from and to metropolitan France in individuals’ trajectories. Breaking with the conventional depiction of migration as a one-way and one-time movement, this thesis aims first of all at improving our knowledge of immigrants’ remigration in France. Considering France both as a place of arrival and departure, this research more broadly seeks to renew the analytical approach of migration, by drawing systematic comparisons between several types of migrants rarely studied together: immigrants, internal migrants from overseas French departments, French nationals born abroad, second generations, and natives.<br/> I combine large datasets drawn from censuses and tax returns (the <em>Permanent Demographic Sample</em>, 1975-1999, 2011-2016) and the <em>Trajectories and Origins</em> survey (2008). Thus, this research is based on an original empirical framework that makes it possible to explore the role of migration experiences in individuals’ trajectories at various points in the migration process. The comparison between different populations reveals the diversity of migration patterns from France, and of their determinants. The combined analysis of these selection processes and of the effects of an international experience on professional careers upon return in France provides new insights into the role of migration in the (re)production of social inequalities. Finally, this thesis shows the need to consider past migration and potential future remigration of immigrants to understand the mechanisms of socioeconomic integration in the host society.
+</details>
+</font>
 </p>
-<div style="margin-bottom:30px;">
+<div style="margin-bottom:10px;">
 
 </div>
-<strong>Résumé (FR):</strong>
-<div style="margin-bottom:5px;">
-
-</div>
+<font size="2">
+<details close>
+<summary>
+Résumé court (Français)
+</summary>
 <div align="center">
 <p><em>"De l’immigration permanente aux migrations circulaires.</em><br/> <em>L’expérience de la (re)migration dans les trajectoires individuelles en France."</em></p>
 </div>
-<div style="margin-bottom:1px;">
+<div style="margin-bottom:5px;">
 
 </div>
 <p style="text-align:justify;">
 Cette thèse étudie le rôle des trajectoires migratoires depuis et vers la France métropolitaine dans les parcours individuels. Dépassant la conception traditionnelle de la migration comme un mouvement unidirectionnel et linéaire, l’objectif de cette thèse est d’abord d’améliorer la connaissance du phénomène de remigration des immigrés en France. En considérant la France à la fois comme espace d’arrivée et de départ, elle vise plus largement à renouveler l’approche des migrations en comparant différents types de migrants rarement étudiés conjointement : immigrés, natifs des DOM, Français nés à l’étranger, deuxièmes générations, et natifs de la population majoritaire.<br/> En combinant les données fiscales et du recensement de l’<em>Échantillon Démographique Permanent</em> (1975-1999, 2011-2016), et de l’enquête <em>Trajectoires et Origines</em> (2008), cette recherche s’appuie sur un dispositif empirique original qui permet d’explorer la place des expériences migratoires dans les parcours individuels à divers moments du processus migratoire. La comparaison entre différentes catégories de population met au jour la diversité des trajectoires migratoires au départ de la France métropolitaine, réelles ou envisagées, et de leurs déterminants. L’analyse combinée de ces processus de sélection et des effets d’un séjour à l’étranger sur les carrières professionnelles au retour en France apporte des éléments nouveaux sur le rôle des migrations dans la (re)production des inégalités sociales. Enfin, cette thèse montre comment considérer les mobilités passées et les possibles remigrations futures des immigrés affine notre compréhension des mécanismes d’intégration socioéconomique dans la société d’accueil.
+</details>
+</font>
 </p>
-<p><br><br><br></p>
+<p><br><br></p>
 <hr />
-<div style="margin-bottom:8px;">
-
-</div>
 </div>
 <div id="book-reviews" class="section level1">
 <h1>Book Reviews</h1>
 <div style="margin-bottom:30px;">
 
 </div>
-<p><font size="3"> Caron, L. (2017). “Wihtol De Wenden, Catherine, <em>Atlas des migrations : Un équilibre mondial à inventer</em>, 2016, Autrement, Atlas-monde, 2016, 96p.”, <strong><em>Population</em></strong>, 72(2), 366-367.</p>
+<p><font size="3"> Caron, L. (2017). “Wihtol De Wenden, Catherine, <em>Atlas des migrations : Un équilibre mondial à inventer</em>, 2016, Autrement, Atlas-monde, 2016, 96p.”, <strong><em>Population</em></strong>, 72(2), 366-367. </font></p>
 </div>
 
 
@@ -571,7 +558,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
