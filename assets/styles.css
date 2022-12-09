@@ -1,0 +1,104 @@
+blockquote {
+  font-style: italic
+}
+
+
+
+body{ 
+    font-family: "Arial"; 
+    font-size: 12pt; 
+} 
+
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 70px;
+    
+}
+
+/* Couleur pour les parties actives dans la floating toc*/
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    background-color: Silver;
+}
+
+/* Couleur pour les liens*/
+a, a:hover {
+    color: SteelBlue ;
+}
+
+/********* Style des "details" *********/
+
+/* Couleur et curseur quand on passe dessus pour les "summary" des "détails"*/
+details {
+  cursor: pointer;
+  padding: 5px 15px;
+  width: 100%;
+  background-color: GhostWhite;
+  /*border: none;
+  box-shadow: 3px 3px 4px black;*/
+  /*Gestion des marges autour de la la boîte (pas à l'intérieur)*/
+  margin: /*haut*/10px /*gauche*/0 0 /*droite*/0;
+  border-radius: 10px;
+  border: 1px solid #cdcdcd;
+}
+
+/* Couleur de la puce pour les "summary" des "détails"*/
+details summary::-webkit-details-marker {
+  color: Black;
+}
+
+/* site des icones : https://feathericons.com */
+details[close] > summary:after {
+   content: url(chevron-up.svg);
+   color: #ADCA48;
+   float: right;
+   font-size: 1.5em;
+   font-weight: bold;
+   margin: /*haut*/ -3px /*gauche*/3px 5px 0;
+   padding: 0;
+   /*text-align: center;*/
+   /*width: 1px;*/
+}
+
+details[open] > summary:after {
+   content: url(chevron-down.svg);
+   color: #ADCA48;
+   float: right;
+   font-size: 1.5em;
+   font-weight: bold;
+   margin: /*haut*/ -3px /*gauche*/3px 5px 0;
+   padding: 0;
+   /*text-align: center;*/
+   /*width: 1px;*/
+}
+
+details[open] > p {
+   margin: /*haut*/ 15px /*gauche*/3px 5px 0;
+}
+
+/* Soulignement du texte des "abstract"*/
+/*.abstract:hover {
+    text-decoration: underline;
+}*/
+
+
+.navbar-fixed-top.scrolled {
+  background-color: SteelBlue !important;
+  transition: background-color 200ms linear;
+}
+
+/* Couleur du texte du titre dans la navbar quand on scroll down*/
+.navbar-fixed-top.scrolled a {
+  color: #FFFFFF;
+}
+/* Couleur du texte des liens vers les pages dans la navbar quand on scroll down*/
+.navbar-fixed-top.scrolled ul li a {
+  color: #FFFFFF;
+}
+
+
+
+
+/***************************************/
+
+
+
