@@ -13,28 +13,21 @@
 
 <title>Louise Caron - Publications</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script>
   $(function () {
     $(document).scroll(function () {
@@ -43,8 +36,6 @@
     });
   });
 </script>
-
-
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -58,8 +49,32 @@
 
 
 
-
-
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
 
 <link rel="stylesheet" href="styles_research.css" type="text/css" />
 
@@ -70,6 +85,10 @@
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -86,16 +105,40 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
 </style>
 
 
 <style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
 .dropdown-submenu {
   position: relative;
 }
@@ -123,7 +166,7 @@ pre code {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
+  border-left-color: #ffffff;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -135,7 +178,7 @@ pre code {
 }
 </style>
 
-<script type="text/javascript">
+<script>
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -145,28 +188,11 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
+  // mark it active
+  menuAnchor.parent().addClass('active');
 
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
 
@@ -178,12 +204,13 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -191,9 +218,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -296,7 +330,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
+<div class="row-fluid">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -310,7 +344,7 @@ div.tocify {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -356,14 +390,16 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div class="fluid-row" id="header">
 
 
 
-<h1 class="title toc-ignore"><br />
-<div align="center"><br />
-<font face="Arial"> Publications<br />
-<div><br />
+<h1 class="title toc-ignore"><div style="margin-bottom:40px;">
+
+</div>
+<div align="center">
+<font face="Arial"> Publications
+<div>
 </font></h1>
 
 </div>
@@ -375,39 +411,13 @@ div.tocify {
 <div style="margin-bottom:30px;">
 
 </div>
-<font size="3"> (with Haley McAvay &amp; Mirna Safi) “Born Again French:
-Explaining Inconsistency in Citizenship Declarations in French
-Longitudinal Data.”, <strong><em>American Sociological
-Review</em></strong>, Forthcoming. </font> <font size="3">
+<font size="3"> (with Haley McAvay &amp; Mirna Safi) “Born Again French: Explaining Inconsistency in Citizenship Declarations in French Longitudinal Data.”, <strong><em>American Sociological Review</em></strong>, Forthcoming. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-Citizenship is a fundamental boundary in contemporary societies that
-entails rights, sense of belonging and social status. Drawing on
-longitudinal census data, this article tracks individual changes in
-self-reported citizenship over 30 years in France. Respondents choose
-one of three categories: “French by birth,” “became French,” or
-“foreigner.” The first category should be stable over the life course:
-one is born, but cannot become, “French by birth.” Yet, our findings
-indicate that about 19 percent of foreign-origin respondents in a given
-census switch to “French by birth” declarations at the next census, in a
-process we call reclassification. Immigrant assimilation variables, such
-as nativity and length of stay, and events such as intermarriage,
-naturalization, and residential mobility, trigger reclassification. Yet
-reclassification is also higher among individuals with lower
-socioeconomic status and respondents of African and Southeast Asian
-origin, as well as those with origins in former French colonies. These
-findings suggest reclassification is a byproduct of immigrant
-assimilation, which triggers feelings of national identity, as well as
-status upgrading, whereby disadvantaged and discriminated groups change
-their citizenship declaration to compensate for low social status.
-Empirically novel, reclassification offers original theoretical insights
-into the meanings of citizenship, civic stratification, and
-boundary-crossing.
+Citizenship is a fundamental boundary in contemporary societies that entails rights, sense of belonging and social status. Drawing on longitudinal census data, this article tracks individual changes in self-reported citizenship over 30 years in France. Respondents choose one of three categories: “French by birth,” “became French,” or “foreigner.” The first category should be stable over the life course: one is born, but cannot become, “French by birth.” Yet, our findings indicate that about 19 percent of foreign-origin respondents in a given census switch to “French by birth” declarations at the next census, in a process we call reclassification. Immigrant assimilation variables, such as nativity and length of stay, and events such as intermarriage, naturalization, and residential mobility, trigger reclassification. Yet reclassification is also higher among individuals with lower socioeconomic status and respondents of African and Southeast Asian origin, as well as those with origins in former French colonies. These findings suggest reclassification is a byproduct of immigrant assimilation, which triggers feelings of national identity, as well as status upgrading, whereby disadvantaged and discriminated groups change their citizenship declaration to compensate for low social status. Empirically novel, reclassification offers original theoretical insights into the meanings of citizenship, civic stratification, and boundary-crossing.
 </details>
 <p></font></p>
 <div style="margin-bottom:30px;">
@@ -416,308 +426,111 @@ boundary-crossing.
 <div style="margin-bottom:30px;">
 
 </div>
-<font size="3"> (with Marine Haddad) <a
-href="https://onlinelibrary.wiley.com/doi/full/10.1002/psp.2629">“Transregional
-Spouses, Parents and Children: How Gender and Family Shape Return
-Migration in the French Overseas”</a>, <strong><em>Population, Space and
-Place</em></strong>, 29(3) e2629, 2022. </font> <font size="3">
+<font size="3"> (with Marine Haddad) <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/psp.2629">“Transregional Spouses, Parents and Children: How Gender and Family Shape Return Migration in the French Overseas”</a>, <strong><em>Population, Space and Place</em></strong>, 29(3) e2629, 2022. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-This paper explores the role of migrants’ family dynamics over the life
-cycle on their decisions to return focusing on three dimensions:
-relationship status, children and intergenerational solidarities. It
-brings a unique contribution to migration studies by investigating
-whether these mechanisms differ for male and female migrants. Combining
-two surveys (Migration Family Ageing and Trajectories and Origins)
-collected in the origin and destination regions, we study return
-behaviors of migrants born in the French Overseas departments (DOM)
-moving from metropolitan France back to their DOM of birth. Contrasting
-with traditional research which tends to restrict the analysis of family
-considerations to female migrants, our findings show that family
-experiences affect return migrations for both men and women, yet in
-different ways. While partnering, breaking-up and having children affect
-the returns of both men and women, only female migrants are more likely
-to return when their parent(s) live in the DOM. This could draw back to
-a gendered distribution of family roles and responsibilities, but also
-to gendered networks with stronger ties between female migrants and
-their parents.
+This paper explores the role of migrants’ family dynamics over the life cycle on their decisions to return focusing on three dimensions: relationship status, children and intergenerational solidarities. It brings a unique contribution to migration studies by investigating whether these mechanisms differ for male and female migrants. Combining two surveys (Migration Family Ageing and Trajectories and Origins) collected in the origin and destination regions, we study return behaviors of migrants born in the French Overseas departments (DOM) moving from metropolitan France back to their DOM of birth. Contrasting with traditional research which tends to restrict the analysis of family considerations to female migrants, our findings show that family experiences affect return migrations for both men and women, yet in different ways. While partnering, breaking-up and having children affect the returns of both men and women, only female migrants are more likely to return when their parent(s) live in the DOM. This could draw back to a gendered distribution of family roles and responsibilities, but also to gendered networks with stronger ties between female migrants and their parents.
 </details>
 <p></font></p>
 <div style="margin-bottom:30px;">
 
 </div>
-<font size="3"> <a
-href="https://www.cairn.info/revue-francaise-de-sociologie-2022-1-page-113.htm">“Des
-parcours migratoires aux positions économiques : ce que les migrations
-complexes changent à l’insertion des immigrés”</a>, <strong><em>Revue
-française de sociologie</em></strong>, 63(1), 113-148, 2022. </font>
-<font size="3">
+<font size="3"> <a href="https://www.cairn.info/revue-francaise-de-sociologie-2022-1-page-113.htm">“Des parcours migratoires aux positions économiques : ce que les migrations complexes changent à l’insertion des immigrés”</a>, <strong><em>Revue française de sociologie</em></strong>, 63(1), 113-148, 2022. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-Cet article interroge ce qu’une meilleure prise en compte des
-expériences migratoires antérieures apporte à la compréhension des
-processus d’intégration des immigrés dans le pays de destination. En se
-fondant sur les données de l’enquête « Trajectoires et Origines », il
-décrit d’abord la diversité des parcours géographiques passés des
-immigrés en France grâce à des analyses de séquences qui mettent au jour
-plusieurs formes de migrations complexes (transit de courte durée,
-transit de longue durée, épisodes migratoires éparses avant l’arrivée en
-France, allers-retours après l’installation en métropole). Des
-régressions montrent ensuite en particulier que les trajectoires
-marquées par des migrations de transit sont associées à des situations
-économiques et résidentielles plus favorables en France. Différents
-mécanismes explicatifs sont discutés, comme l’hypothèse de disparités
-dans les ressources initiales et acquises au cours de la migration. Ces
-analyses confirment que la spécificité des trajectoires migratoires
-constitue une dimension supplémentaire pertinente pour rendre compte de
-l’hétérogénéité des positions socioéconomiques des immigrés.
+Cet article interroge ce qu’une meilleure prise en compte des expériences migratoires antérieures apporte à la compréhension des processus d’intégration des immigrés dans le pays de destination. En se fondant sur les données de l’enquête « Trajectoires et Origines », il décrit d’abord la diversité des parcours géographiques passés des immigrés en France grâce à des analyses de séquences qui mettent au jour plusieurs formes de migrations complexes (transit de courte durée, transit de longue durée, épisodes migratoires éparses avant l’arrivée en France, allers-retours après l’installation en métropole). Des régressions montrent ensuite en particulier que les trajectoires marquées par des migrations de transit sont associées à des situations économiques et résidentielles plus favorables en France. Différents mécanismes explicatifs sont discutés, comme l’hypothèse de disparités dans les ressources initiales et acquises au cours de la migration. Ces analyses confirment que la spécificité des trajectoires migratoires constitue une dimension supplémentaire pertinente pour rendre compte de l’hétérogénéité des positions socioéconomiques des immigrés.
 </details>
 </font>
 <div style="margin-bottom:3px;">
 
 </div>
 <ul class="short_retrait">
-<font size="3"><em>[English version]</em> - <a
-href="https://www.cairn-int.info/journal-revue-francaise-de-sociologie-2022-1-page-113.htm">“From
-Migration Trajectories to Economic Positions: the Diversity of
-Integration Processes among Immigrants in France”</a>, <em>Revue
-française de sociologie</em>, 73(1), 113-148, 2022. </font>
-<font size="3">
+<font size="3"><em>[English version]</em> - <a href="https://www.cairn-int.info/journal-revue-francaise-de-sociologie-2022-1-page-113.htm">“From Migration Trajectories to Economic Positions: the Diversity of Integration Processes among Immigrants in France”</a>, <em>Revue française de sociologie</em>, 73(1), 113-148, 2022. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-This article examines the role of past migration experiences in
-immigrants’ integration, and to what extent considering geographic
-trajectories enriches immigration theories. Using the Trajectories and
-Origins survey (TeO) (Ined-Insee, 2008-2009), analyses first describe
-the diversity of migration pathways among immigrants in France.
-Regressions then show how migration histories are related to distinct
-levels of economic and residential integration. In particular, transit
-migrations are associated with more favorable positions in France.
-Different mechanisms are discussed, such as the hypothesis of
-disparities in initial and acquired resources during migration. These
-analyses confirm that migration trajectories constitute an additional
-relevant dimension for understanding the heterogeneity of immigrants’
-positions, especially within the same origin.
+This article examines the role of past migration experiences in immigrants’ integration, and to what extent considering geographic trajectories enriches immigration theories. Using the Trajectories and Origins survey (TeO) (Ined-Insee, 2008-2009), analyses first describe the diversity of migration pathways among immigrants in France. Regressions then show how migration histories are related to distinct levels of economic and residential integration. In particular, transit migrations are associated with more favorable positions in France. Different mechanisms are discussed, such as the hypothesis of disparities in initial and acquired resources during migration. These analyses confirm that migration trajectories constitute an additional relevant dimension for understanding the heterogeneity of immigrants’ positions, especially within the same origin.
 </details>
 </ul>
 <p></font></p>
 <div style="margin-bottom:30px;">
 
 </div>
-(with Bruno Schoumaker, Mireille Le Guen &amp; Wanli Nie) <a
-href="https://www.demographic-research.org/volumes/vol47/10/default.htm">“Multiple
-(Il)legal Pathways: The Diversity of Immigrants’ Legal Trajectories in
-Belgium”</a>, <strong><em>Demographic Research</em></strong>, 47,
-247-290, 2022. <font size="3">
+(with Bruno Schoumaker, Mireille Le Guen &amp; Wanli Nie) <a href="https://www.demographic-research.org/volumes/vol47/10/default.htm">“Multiple (Il)legal Pathways: The Diversity of Immigrants’ Legal Trajectories in Belgium”</a>, <strong><em>Demographic Research</em></strong>, 47, 247-290, 2022. <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary> Abstract </summary>
 <div style="margin-bottom:5px;">
 
 </div>
-<p>Background: A growing number of primarily qualitative studies have
-shown that the legal trajectories of immigrants in Western countries are
-often complex. However, immigrants’ long-term legal trajectories remain
-a blind spot in quantitative migration research.</p>
-<p>Objective: This paper aims to provide new empirical insights into the
-variety of legal pathways among non-European immigrants who arrived in
-Belgium between 1999 and 2008. We build a typology of legal
-trajectories, and we investigate how these trajectories are related to
-immigrants’ country of origin, asylum status, and social ties in
-Belgium.</p>
-<p>Methods: The micro longitudinal data is from the Belgian National
-Register. We use sequence analysis to identify clusters of legal
-trajectories, and multinomial logistic regressions to explore how they
-are related to immigrants’ characteristics.</p>
-<p>Results: We identify seven types of legal trajectory. While some are
-simple and smooth, others are characterized by moves back and forth
-between legal statuses and frequent periods of irregularity. Immigrants
-from the least developed countries and rejected asylum seekers are more
-likely to experience slow and chaotic trajectories. By contrast, simple
-and short trajectories are more common among immigrants from higher- or
-middle-income countries. We also find that social and family ties are a
-key factor in long-term immigrants experiencing smooth legal
-trajectories.</p>
-<p>Conclusions: Legal statuses vary substantially over time, and
-trajectories differ widely among immigrants. Some categories of
-immigrants are more at risk of highly precarious long-term trajectories
-that may lead to situations of ‘permanent temporariness’.</p>
-Contribution: The paper highlights the relevance of a quantitative
-longitudinal perspective on immigrants’ legal status and underlines the
-need to take into account not only the legal status upon arrival but
-also the complexity of legal trajectories during the stay in the
-destination country.
+<p>Background: A growing number of primarily qualitative studies have shown that the legal trajectories of immigrants in Western countries are often complex. However, immigrants’ long-term legal trajectories remain a blind spot in quantitative migration research.</p>
+<p>Objective: This paper aims to provide new empirical insights into the variety of legal pathways among non-European immigrants who arrived in Belgium between 1999 and 2008. We build a typology of legal trajectories, and we investigate how these trajectories are related to immigrants’ country of origin, asylum status, and social ties in Belgium.</p>
+<p>Methods: The micro longitudinal data is from the Belgian National Register. We use sequence analysis to identify clusters of legal trajectories, and multinomial logistic regressions to explore how they are related to immigrants’ characteristics.</p>
+<p>Results: We identify seven types of legal trajectory. While some are simple and smooth, others are characterized by moves back and forth between legal statuses and frequent periods of irregularity. Immigrants from the least developed countries and rejected asylum seekers are more likely to experience slow and chaotic trajectories. By contrast, simple and short trajectories are more common among immigrants from higher- or middle-income countries. We also find that social and family ties are a key factor in long-term immigrants experiencing smooth legal trajectories.</p>
+<p>Conclusions: Legal statuses vary substantially over time, and trajectories differ widely among immigrants. Some categories of immigrants are more at risk of highly precarious long-term trajectories that may lead to situations of ‘permanent temporariness’.</p>
+Contribution: The paper highlights the relevance of a quantitative longitudinal perspective on immigrants’ legal status and underlines the need to take into account not only the legal status upon arrival but also the complexity of legal trajectories during the stay in the destination country.
 </details>
 </font>
 <ul class="short_retrait">
-<font size="2"><a
-href="https://www.demographic-research.org/articles/editorschoice">Editor’s
-Choice Award</a> among papers published in <em>Demographic
-Research</em></font>
+<font size="2"><a href="https://www.demographic-research.org/articles/editorschoice">Editor’s Choice Award</a> among papers published in <em>Demographic Research</em></font>
 </ul>
 <div style="margin-bottom:30px;">
 
 </div>
-(with Mathieu Ichou) <a
-href="https://journals.sagepub.com/doi/10.1177/0197918320904925">“High
-Selection, Low Success: The Heterogeneous Effect of Migrants’ Access to
-Employment on Their Remigration”</a>, <strong><em>International
-Migration Review</em></strong>, 54(4), 1104-1133, 2020. <font size="3">
+(with Mathieu Ichou) <a href="https://journals.sagepub.com/doi/10.1177/0197918320904925">“High Selection, Low Success: The Heterogeneous Effect of Migrants’ Access to Employment on Their Remigration”</a>, <strong><em>International Migration Review</em></strong>, 54(4), 1104-1133, 2020. <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary> Abstract </summary>
 <div style="margin-bottom:5px;">
 
 </div>
-This article reconciles contrasting findings on the effect of access to
-employment on remigration by showing that this effect is actually
-heterogeneous and depends on migrants’ initial educational selection
-from the origin country. Combining longitudinal data from England and
-Wales (1971–2011) with data on educational attainment distributions in
-migrants’ origin countries, we find that the impact of being out of a
-job (unemployed or inactive) on the probability to remigrate is larger
-among migrants who were initially more positively selected in terms of
-educational attainment. This interaction effect appears stronger for
-male and recent migrants. Thus, in addition to migrants’ access to
-employment in the host country, the mismatch between migrants’ initial
-selection — that partly captures their premigration expectations — and
-their employment status at destination helps explain remigration
-behaviors.
+This article reconciles contrasting findings on the effect of access to employment on remigration by showing that this effect is actually heterogeneous and depends on migrants’ initial educational selection from the origin country. Combining longitudinal data from England and Wales (1971–2011) with data on educational attainment distributions in migrants’ origin countries, we find that the impact of being out of a job (unemployed or inactive) on the probability to remigrate is larger among migrants who were initially more positively selected in terms of educational attainment. This interaction effect appears stronger for male and recent migrants. Thus, in addition to migrants’ access to employment in the host country, the mismatch between migrants’ initial selection — that partly captures their premigration expectations — and their employment status at destination helps explain remigration behaviors.
 </details>
 </font>
 <ul class="short_retrait">
-<font size="2">Media coverage: <a
-href="https://population-europe.eu/research/popdigests/how-does-unemployment-affect-migrants-likelihood-leave-england-and-wales">PopDigest</a></font>
+<font size="2">Media coverage: <a href="https://population-europe.eu/research/popdigests/how-does-unemployment-affect-migrants-likelihood-leave-england-and-wales">PopDigest</a></font>
 </ul>
 <div style="margin-bottom:30px;">
 
 </div>
-<font size="3"> <a
-href="https://journals.sagepub.com/doi/abs/10.1177/0197918319885646">“An
-Intergenerational Perspective on (Re)migration: Return and Onward
-Mobility Intentions across Immigrant Generations”</a>,
-<strong><em>International Migration Review</em></strong>, 54(3),
-820-852, 2020. </font> <font size="3">
+<font size="3"> <a href="https://journals.sagepub.com/doi/abs/10.1177/0197918319885646">“An Intergenerational Perspective on (Re)migration: Return and Onward Mobility Intentions across Immigrant Generations”</a>, <strong><em>International Migration Review</em></strong>, 54(3), 820-852, 2020. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-This article compares the prevalence and determinants of international
-mobility intentions across immigrant generations (G1, G1.5, G2, and
-G2.5), using French survey data. Two types of migration intentions are
-analyzed: (a) return to the (parents’) origin country and (b) onward
-migration to a third country. Results highlight migration intentions’
-intergenerational variation and underlying logics. The probability to
-state return intentions is larger for G1 yet surprisingly similar to the
-stated return intentions for G2. By contrast, G2.5 (one immigrant and
-one French native parent) stand out as they are primarily characterized
-by onward migration intentions and are significantly less likely to
-consider “returning” to their sole immigrant parents’ origin country.
-Echoing the conceptual framework of “reactive transnationalism” or
-“reactive ethnicity,” the specific determinant of G2 return intentions
-appears to be their perception of discrimination. These findings show
-the value of (a) disaggregating the traditional first versus second
-generation dichotomy to understand the complexity of migration
-intentions and (b) including countries other than the parental homeland
-when studying second-generation transnational practices. More broadly,
-the article contributes to a better understanding of integration
-mechanisms by using migration intentions not only as proxies for
-population movements but also as a valuable framework providing
-empirical insights into immigrants’ personal relationship to both the
-country of residence and expected destination.
+This article compares the prevalence and determinants of international mobility intentions across immigrant generations (G1, G1.5, G2, and G2.5), using French survey data. Two types of migration intentions are analyzed: (a) return to the (parents’) origin country and (b) onward migration to a third country. Results highlight migration intentions’ intergenerational variation and underlying logics. The probability to state return intentions is larger for G1 yet surprisingly similar to the stated return intentions for G2. By contrast, G2.5 (one immigrant and one French native parent) stand out as they are primarily characterized by onward migration intentions and are significantly less likely to consider “returning” to their sole immigrant parents’ origin country. Echoing the conceptual framework of “reactive transnationalism” or “reactive ethnicity,” the specific determinant of G2 return intentions appears to be their perception of discrimination. These findings show the value of (a) disaggregating the traditional first versus second generation dichotomy to understand the complexity of migration intentions and (b) including countries other than the parental homeland when studying second-generation transnational practices. More broadly, the article contributes to a better understanding of integration mechanisms by using migration intentions not only as proxies for population movements but also as a valuable framework providing empirical insights into immigrants’ personal relationship to both the country of residence and expected destination.
 </details>
 <p></font></p>
 <div style="margin-bottom:30px;">
 
 </div>
-<font size="3"> <a
-href="https://www.cairn.info/article.php?ID_ARTICLE=POPU_1803_0503">“De
-qui mesure-t-on l’intégration ? Remigration des immigrés et insertion
-professionnelle en France”</a>, <strong><em>Population</em></strong>,
-73(3), 503-542, 2018. </font> <font size="3">
+<font size="3"> <a href="https://www.cairn.info/article.php?ID_ARTICLE=POPU_1803_0503">“De qui mesure-t-on l’intégration ? Remigration des immigrés et insertion professionnelle en France”</a>, <strong><em>Population</em></strong>, 73(3), 503-542, 2018. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-La plupart des études quantitatives sur l’immigration en France font
-l’hypothèse implicite que les immigrés s’installent de façon permanente
-dans le pays de destination. Pourtant, beaucoup d’entre eux repartent,
-soit pour rentrer dans leur pays d’origine, soit pour se rendre dans un
-pays tiers. Cet article analyse ces mécanismes de remigration ainsi que
-leurs conséquences empiriques et méthodologiques pour l’étude du devenir
-des immigrés en France. Le large panel administratif de
-l’<em>Échantillon démographique permanent</em> donne l’opportunité
-d’examiner les sorties du territoire entre 1975 et 1999. Ces analyses
-montrent que les immigrés qui repartent sont caractérisés par des
-situations familiales et professionnelles spécifiques, ce qui pourrait
-affecter la validité des études sur l’intégration. En comparant
-l’évolution de l’accès à l’emploi des immigrés à partir d’estimations
-transversales et de panel, on montre néanmoins que les mesures standards
-de l’insertion professionnelle de ces derniers par rapport aux natifs
-sont peu biaisées par un phénomène de remigration sélective. Cette
-démarche méthodologique invite à interroger le postulat classique de la
-migration permanente quand on analyse quantitativement les processus
-d’intégration.
+La plupart des études quantitatives sur l’immigration en France font l’hypothèse implicite que les immigrés s’installent de façon permanente dans le pays de destination. Pourtant, beaucoup d’entre eux repartent, soit pour rentrer dans leur pays d’origine, soit pour se rendre dans un pays tiers. Cet article analyse ces mécanismes de remigration ainsi que leurs conséquences empiriques et méthodologiques pour l’étude du devenir des immigrés en France. Le large panel administratif de l’<em>Échantillon démographique permanent</em> donne l’opportunité d’examiner les sorties du territoire entre 1975 et 1999. Ces analyses montrent que les immigrés qui repartent sont caractérisés par des situations familiales et professionnelles spécifiques, ce qui pourrait affecter la validité des études sur l’intégration. En comparant l’évolution de l’accès à l’emploi des immigrés à partir d’estimations transversales et de panel, on montre néanmoins que les mesures standards de l’insertion professionnelle de ces derniers par rapport aux natifs sont peu biaisées par un phénomène de remigration sélective. Cette démarche méthodologique invite à interroger le postulat classique de la migration permanente quand on analyse quantitativement les processus d’intégration.
 </details>
 </font>
 <div style="margin-bottom:3px;">
 
 </div>
 <ul class="short_retrait">
-<font size="3"><em>[English version]</em> - <a
-href="https://www.cairn-int.info/article-E_POPU_1803_0503--whose-integration-do-we-measure.htm#xd_co_f=NDczZjMxZDktZjMwNS00OTZjLWJlNGYtMGYwYjU2MzkzZjUw~">“Whose
-Integration Do We Measure? Immigrants’ Remigration and Labour Market
-Integration in France”</a>, <em>Population</em>, 73(3), 481-518, 2018.
-</font> <font size="3">
+<font size="3"><em>[English version]</em> - <a href="https://www.cairn-int.info/article-E_POPU_1803_0503--whose-integration-do-we-measure.htm#xd_co_f=NDczZjMxZDktZjMwNS00OTZjLWJlNGYtMGYwYjU2MzkzZjUw~">“Whose Integration Do We Measure? Immigrants’ Remigration and Labour Market Integration in France”</a>, <em>Population</em>, 73(3), 481-518, 2018. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-Most quantitative studies on immigrants’ integration in France are based
-on the implicit assumption that all immigrants would settle permanently
-in the country of destination. However, many immigrants eventually
-remigrate, either returning to their country of origin or pursuing an
-onward migration to a third country. This article explores the
-mechanisms of remigration and their empirical and methodological
-consequences for the analysis of immigrants’ trajectories in France.
-Taking advantage of large administrative longitudinal data from the
-<em>Permanent Demographic Sample (EDP)</em>, this article examines
-departures from France between 1975 and 1999. The results show that
-immigrants who remigrate over the period are characterized by specific
-family and work situations, which might affect the validity of studies
-on integration. However, by comparing measures of immigrants’ economic
-integration drawn from cross-sectional and panel estimations, this study
-finds no evidence of a bias due to selective remigration for standard
-measures of immigrants’ trajectories in the French labour market. This
-approach calls for further questioning the classical conceptual
-framework of permanent migration in quantitative analyses of integration
-processes.
+Most quantitative studies on immigrants’ integration in France are based on the implicit assumption that all immigrants would settle permanently in the country of destination. However, many immigrants eventually remigrate, either returning to their country of origin or pursuing an onward migration to a third country. This article explores the mechanisms of remigration and their empirical and methodological consequences for the analysis of immigrants’ trajectories in France. Taking advantage of large administrative longitudinal data from the <em>Permanent Demographic Sample (EDP)</em>, this article examines departures from France between 1975 and 1999. The results show that immigrants who remigrate over the period are characterized by specific family and work situations, which might affect the validity of studies on integration. However, by comparing measures of immigrants’ economic integration drawn from cross-sectional and panel estimations, this study finds no evidence of a bias due to selective remigration for standard measures of immigrants’ trajectories in the French labour market. This approach calls for further questioning the classical conceptual framework of permanent migration in quantitative analyses of integration processes.
 </details>
 </ul>
 <p></font></p>
@@ -732,37 +545,19 @@ processes.
 <div style="margin-bottom:30px;">
 
 </div>
-<p><font size="3"> (with B. Schoumaker, M. Le Guen &amp; W. Nie)
-“Typologies des trajectoires administratives des immigrés congolais,
-indiens et américains en Belgique : une exploitation des données de
-registre national”, <em>in</em> Sarolea S., Merla L. &amp; Schoumaker B.
-(dir.), <em>Composer avec les normes. Trajectoires de vie et agentivité
-des migrants face au cadre légal.</em>, <strong>L’Harmattan</strong>,
-2021, Paris.</p>
+<p><font size="3"> (with B. Schoumaker, M. Le Guen &amp; W. Nie) “Typologies des trajectoires administratives des immigrés congolais, indiens et américains en Belgique : une exploitation des données de registre national”, <em>in</em> Sarolea S., Merla L. &amp; Schoumaker B. (dir.), <em>Composer avec les normes. Trajectoires de vie et agentivité des migrants face au cadre légal.</em>, <strong>L’Harmattan</strong>, 2021, Paris.</p>
 <div style="margin-bottom:15px;">
 
 </div>
-<p>(with B. Schoumaker, M. Le Guen &amp; W. Nie) “Occurrences et
-récurrences des situations d’irrégularité au sein des trajectoires
-individuelles des Amércains, Congolais et Indiens en Belgique”,
-<em>in</em> Sarolea S., Merla L. &amp; Schoumaker B. (dir.),
-<em>Composer avec les normes. Trajectoires de vie et agentivité des
-migrants face au cadre légal.</em>, <strong>L’Harmattan</strong>, 2021,
-Paris.</p>
+<p>(with B. Schoumaker, M. Le Guen &amp; W. Nie) “Occurrences et récurrences des situations d’irrégularité au sein des trajectoires individuelles des Amércains, Congolais et Indiens en Belgique”, <em>in</em> Sarolea S., Merla L. &amp; Schoumaker B. (dir.), <em>Composer avec les normes. Trajectoires de vie et agentivité des migrants face au cadre légal.</em>, <strong>L’Harmattan</strong>, 2021, Paris.</p>
 <div style="margin-bottom:15px;">
 
 </div>
-<p>“Immigration permanente ou migration temporaire ? L’invisibilité des
-départs de France”<em>in</em> Beauchemin, C. and Ichou, M. (dir.),
-<em>Au-delà de la « crise des migrants » : décentrer le regard</em>,
-<strong>Karthala</strong>, Disputatio, p. 73-9, 2016.</p>
+<p>“Immigration permanente ou migration temporaire ? L’invisibilité des départs de France”<em>in</em> Beauchemin, C. and Ichou, M. (dir.), <em>Au-delà de la « crise des migrants » : décentrer le regard</em>, <strong>Karthala</strong>, Disputatio, p. 73-9, 2016.</p>
 <div style="margin-bottom:15px;">
 
 </div>
-<p>“Les pays européens sont-ils exclusivement des pays d’immigration ?”
-<em>in</em> Thiollet, H. (coord.), <em>Migrants, migrations. 50
-questions pour vous faire votre opinion</em>, <strong>Armand
-Colin</strong>, p. 36-39, 2016. <br><br><br></p>
+<p>“Les pays européens sont-ils exclusivement des pays d’immigration ?” <em>in</em> Thiollet, H. (coord.), <em>Migrants, migrations. 50 questions pour vous faire votre opinion</em>, <strong>Armand Colin</strong>, p. 36-39, 2016. <br><br><br></p>
 <hr />
 <div style="margin-bottom:8px;">
 
@@ -773,54 +568,26 @@ Colin</strong>, p. 36-39, 2016. <br><br><br></p>
 <div style="margin-bottom:30px;">
 
 </div>
-<font size="3"> (with Cris Beauchemin, Marine Haddad &amp; Franck
-Temporal) <a
-href="https://www.cairn.info/revue-population-et-societes-2021-10-page-1.htm">“Migrations
-internationales : ce que l’on mesure (ou pas)”</a>,
-<strong><em>Populations &amp; Sociétés</em></strong>, n°594, 1-4, 2021.
-</font> <font size="3">
+<font size="3"> (with Cris Beauchemin, Marine Haddad &amp; Franck Temporal) <a href="https://www.cairn.info/revue-population-et-societes-2021-10-page-1.htm">“Migrations internationales : ce que l’on mesure (ou pas)”</a>, <strong><em>Populations &amp; Sociétés</em></strong>, n°594, 1-4, 2021. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-Parmi les événements qui contribuent à la dynamique démographique, les
-migrations internationales sont les plus difficiles à appréhender. La
-plupart des pays du monde ne disposent pas d’instruments permettant de
-produire des statistiques régulières. D’un pays à l’autre, les
-définitions et les méthodes de mesure peuvent varier. Depuis le début
-des années 2000, les organisations internationales, comme les Nations
-Unies ou l’Union européenne, promeuvent des approches plus standardisées
-qui permettent de réaliser des comparaisons. Quel que soit l’indicateur
-retenu, la France apparaît en Europe de l’Ouest comme l’un des pays où
-l’immigration est la plus faible.
+Parmi les événements qui contribuent à la dynamique démographique, les migrations internationales sont les plus difficiles à appréhender. La plupart des pays du monde ne disposent pas d’instruments permettant de produire des statistiques régulières. D’un pays à l’autre, les définitions et les méthodes de mesure peuvent varier. Depuis le début des années 2000, les organisations internationales, comme les Nations Unies ou l’Union européenne, promeuvent des approches plus standardisées qui permettent de réaliser des comparaisons. Quel que soit l’indicateur retenu, la France apparaît en Europe de l’Ouest comme l’un des pays où l’immigration est la plus faible.
 </details>
 </font>
 <div style="margin-bottom:1px;">
 
 </div>
 <ul class="short_retrait">
-<font size="3"><em>English version</em> - <a
-href="https://www.cairn-int.info/journal-population-and-societies-2021-10-page-1.htm">“International
-migrations: what is measured (and what is not)”</a>, <em>Populations
-&amp; Sociétés</em>, n°594, 1-4, 2021. </font> <font size="3">
+<font size="3"><em>English version</em> - <a href="https://www.cairn-int.info/journal-population-and-societies-2021-10-page-1.htm">“International migrations: what is measured (and what is not)”</a>, <em>Populations &amp; Sociétés</em>, n°594, 1-4, 2021. </font> <font size="3">
 <details close>
-<summary>
-Abstract
-</summary>
+<summary>Abstract</summary>
 <div style="margin-bottom:5px;">
 
 </div>
-Among the events contributing to population dynamics, international
-migration is the most difficult to capture. Most countries do not have
-the tools to produce regular statistics. Definitions and measurement
-methods may vary from country to country. Since the early 2000s,
-international organizations such as the United Nations and the European
-Union have been promoting more standardized approaches that allow
-comparisons to be made. Whatever the indicator used, France appears to
-be one of the countries with the lowest immigration in Western Europe.
+Among the events contributing to population dynamics, international migration is the most difficult to capture. Most countries do not have the tools to produce regular statistics. Definitions and measurement methods may vary from country to country. Since the early 2000s, international organizations such as the United Nations and the European Union have been promoting more standardized approaches that allow comparisons to be made. Whatever the indicator used, France appears to be one of the countries with the lowest immigration in Western Europe.
 </details>
 </ul>
 <p></font></p>
@@ -832,69 +599,34 @@ be one of the countries with the lowest immigration in Western Europe.
 <div style="margin-bottom:30px;">
 
 </div>
-Caron, L., 2019, <em>De l’immigration permanente aux migrations
-circulaires. L’expérience de la (re)migration dans les trajectoires
-individuelles en France.</em>, Ph.D. Thesis in Sociology, Paris,
-Sciences Po, 436 p.
+Caron, L., 2019, <em>De l’immigration permanente aux migrations circulaires. L’expérience de la (re)migration dans les trajectoires individuelles en France.</em>, Ph.D. Thesis in Sociology, Paris, Sciences Po, 436 p.
 <div style="margin-bottom:5px;">
 
 </div>
 <ul class="short_retrait">
-<em><strong>Honorable Mention</strong></em> from the <strong>2020
-IMISCOE</strong> Maria Baganha Award Committee.
+<em><strong>Honorable Mention</strong></em> from the <strong>2020 IMISCOE</strong> Maria Baganha Award Committee.
 <div style="margin-bottom:5px;">
 
 </div>
-<em>Thesis committee:</em> Didier Breton (Uni. of Strasbourg), Mathieu
-Ichou (Ined), Dominique Meurs (Uni. of Nanterre), Ettore Recchi
-(Sciences Po), Mirna Safi (<em>supervisor</em>, Sciences Po), Thomas
-Soehl (McGill University).
+<em>Thesis committee:</em> Didier Breton (Uni. of Strasbourg), Mathieu Ichou (Ined), Dominique Meurs (Uni. of Nanterre), Ettore Recchi (Sciences Po), Mirna Safi (<em>supervisor</em>, Sciences Po), Thomas Soehl (McGill University).
 </ul>
 <ul>
-<li><a href="Dissertation_Summary.pdf">Thesis Summary (in
-English)</a></li>
+<li><a href="Dissertation_Summary.pdf">Thesis Summary (in English)</a></li>
 </ul>
 <div style="margin-bottom:10px;">
 
 </div>
 <font size="3">
 <details close>
-<summary>
-Short Abstract (English)
-</summary>
+<summary>Short Abstract (English)</summary>
 <div align="center">
-<p><em>“From Permanent Migration to Circular Migrations.</em><br/>
-<em>The Experience of (Re)migration in Individuals’ Trajectories in
-France.”</em></p>
+<p><em>"From Permanent Migration to Circular Migrations.</em><br/> <em>The Experience of (Re)migration in Individuals’ Trajectories in France."</em></p>
 </div>
 <div style="margin-bottom:5px;">
 
 </div>
 <p style="text-align:justify;">
-This doctoral dissertation studies the role of migration trajectories
-from and to metropolitan France in individuals’ trajectories. Breaking
-with the conventional depiction of migration as a one-way and one-time
-movement, this thesis aims first of all at improving our knowledge of
-immigrants’ remigration in France. Considering France both as a place of
-arrival and departure, this research more broadly seeks to renew the
-analytical approach of migration, by drawing systematic comparisons
-between several types of migrants rarely studied together: immigrants,
-internal migrants from overseas French departments, French nationals
-born abroad, second generations, and natives.<br/> I combine large
-datasets drawn from censuses and tax returns (the <em>Permanent
-Demographic Sample</em>, 1975-1999, 2011-2016) and the <em>Trajectories
-and Origins</em> survey (2008). Thus, this research is based on an
-original empirical framework that makes it possible to explore the role
-of migration experiences in individuals’ trajectories at various points
-in the migration process. The comparison between different populations
-reveals the diversity of migration patterns from France, and of their
-determinants. The combined analysis of these selection processes and of
-the effects of an international experience on professional careers upon
-return in France provides new insights into the role of migration in the
-(re)production of social inequalities. Finally, this thesis shows the
-need to consider past migration and potential future remigration of
-immigrants to understand the mechanisms of socioeconomic integration in
-the host society.
+This doctoral dissertation studies the role of migration trajectories from and to metropolitan France in individuals’ trajectories. Breaking with the conventional depiction of migration as a one-way and one-time movement, this thesis aims first of all at improving our knowledge of immigrants’ remigration in France. Considering France both as a place of arrival and departure, this research more broadly seeks to renew the analytical approach of migration, by drawing systematic comparisons between several types of migrants rarely studied together: immigrants, internal migrants from overseas French departments, French nationals born abroad, second generations, and natives.<br/> I combine large datasets drawn from censuses and tax returns (the <em>Permanent Demographic Sample</em>, 1975-1999, 2011-2016) and the <em>Trajectories and Origins</em> survey (2008). Thus, this research is based on an original empirical framework that makes it possible to explore the role of migration experiences in individuals’ trajectories at various points in the migration process. The comparison between different populations reveals the diversity of migration patterns from France, and of their determinants. The combined analysis of these selection processes and of the effects of an international experience on professional careers upon return in France provides new insights into the role of migration in the (re)production of social inequalities. Finally, this thesis shows the need to consider past migration and potential future remigration of immigrants to understand the mechanisms of socioeconomic integration in the host society.
 </details>
 </font>
 </p>
@@ -903,43 +635,15 @@ the host society.
 </div>
 <font size="3">
 <details close>
-<summary>
-Résumé court (Français)
-</summary>
+<summary>Résumé court (Français)</summary>
 <div align="center">
-<p><em>“De l’immigration permanente aux migrations
-circulaires.</em><br/> <em>L’expérience de la (re)migration dans les
-trajectoires individuelles en France.”</em></p>
+<p><em>"De l’immigration permanente aux migrations circulaires.</em><br/> <em>L’expérience de la (re)migration dans les trajectoires individuelles en France."</em></p>
 </div>
 <div style="margin-bottom:5px;">
 
 </div>
 <p style="text-align:justify;">
-Cette thèse étudie le rôle des trajectoires migratoires depuis et vers
-la France métropolitaine dans les parcours individuels. Dépassant la
-conception traditionnelle de la migration comme un mouvement
-unidirectionnel et linéaire, l’objectif de cette thèse est d’abord
-d’améliorer la connaissance du phénomène de remigration des immigrés en
-France. En considérant la France à la fois comme espace d’arrivée et de
-départ, elle vise plus largement à renouveler l’approche des migrations
-en comparant différents types de migrants rarement étudiés conjointement
-: immigrés, natifs des DOM, Français nés à l’étranger, deuxièmes
-générations, et natifs de la population majoritaire.<br/> En combinant
-les données fiscales et du recensement de l’<em>Échantillon
-Démographique Permanent</em> (1975-1999, 2011-2016), et de l’enquête
-<em>Trajectoires et Origines</em> (2008), cette recherche s’appuie sur
-un dispositif empirique original qui permet d’explorer la place des
-expériences migratoires dans les parcours individuels à divers moments
-du processus migratoire. La comparaison entre différentes catégories de
-population met au jour la diversité des trajectoires migratoires au
-départ de la France métropolitaine, réelles ou envisagées, et de leurs
-déterminants. L’analyse combinée de ces processus de sélection et des
-effets d’un séjour à l’étranger sur les carrières professionnelles au
-retour en France apporte des éléments nouveaux sur le rôle des
-migrations dans la (re)production des inégalités sociales. Enfin, cette
-thèse montre comment considérer les mobilités passées et les possibles
-remigrations futures des immigrés affine notre compréhension des
-mécanismes d’intégration socioéconomique dans la société d’accueil.
+Cette thèse étudie le rôle des trajectoires migratoires depuis et vers la France métropolitaine dans les parcours individuels. Dépassant la conception traditionnelle de la migration comme un mouvement unidirectionnel et linéaire, l’objectif de cette thèse est d’abord d’améliorer la connaissance du phénomène de remigration des immigrés en France. En considérant la France à la fois comme espace d’arrivée et de départ, elle vise plus largement à renouveler l’approche des migrations en comparant différents types de migrants rarement étudiés conjointement : immigrés, natifs des DOM, Français nés à l’étranger, deuxièmes générations, et natifs de la population majoritaire.<br/> En combinant les données fiscales et du recensement de l’<em>Échantillon Démographique Permanent</em> (1975-1999, 2011-2016), et de l’enquête <em>Trajectoires et Origines</em> (2008), cette recherche s’appuie sur un dispositif empirique original qui permet d’explorer la place des expériences migratoires dans les parcours individuels à divers moments du processus migratoire. La comparaison entre différentes catégories de population met au jour la diversité des trajectoires migratoires au départ de la France métropolitaine, réelles ou envisagées, et de leurs déterminants. L’analyse combinée de ces processus de sélection et des effets d’un séjour à l’étranger sur les carrières professionnelles au retour en France apporte des éléments nouveaux sur le rôle des migrations dans la (re)production des inégalités sociales. Enfin, cette thèse montre comment considérer les mobilités passées et les possibles remigrations futures des immigrés affine notre compréhension des mécanismes d’intégration socioéconomique dans la société d’accueil.
 </details>
 </font>
 </p>
@@ -975,7 +679,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).parent().toggleClass('nav-tabs-open')
   });
 });
 </script>
@@ -984,9 +688,6 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
